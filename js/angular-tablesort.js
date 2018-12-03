@@ -463,6 +463,8 @@ tableSortModule.directive( 'tsCriteria', function() {
         },
         link: function(scope, element, attrs, tsWrapperCtrl) {
             var clickingCallback = function(event) {
+                console.log(event)
+                console.log(scope.tsSortBy)
                 scope.$apply( function() {
                     if( event.shiftKey ) {
                         tsWrapperCtrl.addSortField(attrs.tsCriteria, element, attrs.tsName, scope.tsOrderBy);
