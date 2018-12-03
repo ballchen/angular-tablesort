@@ -467,9 +467,9 @@ tableSortModule.directive( 'tsCriteria', function() {
                 console.log(scope.tsSortBy)
                 scope.$apply( function() {
                     if( event.shiftKey ) {
-                        tsWrapperCtrl.addSortField(attrs.tsCriteria, element, attrs.tsName, scope.tsOrderBy);
+                        tsWrapperCtrl.addSortField(attrs.tsCriteria, element, attrs.tsName, 'desc');
                     } else {
-                        tsWrapperCtrl.setSortField(attrs.tsCriteria, element, attrs.tsName, scope.tsOrderBy);
+                        tsWrapperCtrl.setSortField(attrs.tsCriteria, element, attrs.tsName, 'desc');
                     }
                 } );
             };
@@ -485,9 +485,9 @@ tableSortModule.directive( 'tsCriteria', function() {
             element[element.on ? 'on' : 'bind']('keypress', keypressCallback ); //Add event handler for keypress call back
             element.addClass( 'tablesort-sortable' );
             if( 'tsDefault' in attrs && attrs.tsDefault !== '0' && attrs.tsDefault !== undefined ) {
-                tsWrapperCtrl.addSortField( attrs.tsCriteria, element, attrs.tsName, scope.tsOrderBy );
+                tsWrapperCtrl.addSortField( attrs.tsCriteria, element, attrs.tsName, 'desc' );
                 if( attrs.tsDefault === 'descending' ) {
-                    tsWrapperCtrl.addSortField( attrs.tsCriteria, element, attrs.tsName, scope.tsOrderBy );
+                    tsWrapperCtrl.addSortField( attrs.tsCriteria, element, attrs.tsName, 'desc' );
                 }
             }
             if( 'tsFilter' in attrs) {
