@@ -132,10 +132,10 @@ tableSortModule.directive( 'tsWrapper', ['$parse', '$compile', function( $parse,
                 if( $scope.sortExpression.length === 1 && $scope.sortExpression[0][0] === expr[0] ) {
                     if( $scope.sortExpression[0][2] ) {
                         element.removeClass( 'tablesort-desc' );
-                        element.addClass( 'tablesort-asc' );
+                        element.addClass( 'tablesort-desc' );
                         $scope.sortExpression[0][2] = false;
                     } else {
-                        element.removeClass( 'tablesort-asc' );
+                        element.removeClass( 'tablesort-desc' );
                         element.addClass( 'tablesort-desc' );
                         $scope.sortExpression[0][2] = true;
                     }
@@ -147,9 +147,9 @@ tableSortModule.directive( 'tsWrapper', ['$parse', '$compile', function( $parse,
                     for( i=0; i<$scope.headings.length; i=i+1 ) {
                         $scope.headings[i]
                             .removeClass( 'tablesort-desc' )
-                            .removeClass( 'tablesort-asc' );
+                            .removeClass( 'tablesort-desc' );
                     }
-                    element.addClass( 'tablesort-asc' );
+                    element.addClass( 'tablesort-desc' );
                     $scope.sortExpression = [expr];
                     $scope.$emit( 'tablesort:sortOrder', [{
                       name: expr[3],
@@ -167,10 +167,10 @@ tableSortModule.directive( 'tsWrapper', ['$parse', '$compile', function( $parse,
                     if( $scope.sortExpression[i][0] === expr[0] ) {
                         if( $scope.sortExpression[i][2] ) {
                             element.removeClass( 'tablesort-desc' );
-                            element.addClass( 'tablesort-asc' );
+                            element.addClass( 'tablesort-desc' );
                             $scope.sortExpression[i][2] = false;
                         } else {
-                            element.removeClass( 'tablesort-asc' );
+                            element.removeClass( 'tablesort-desc' );
                             element.addClass( 'tablesort-desc' );
                             $scope.sortExpression[i][2] = true;
                         }
@@ -178,7 +178,7 @@ tableSortModule.directive( 'tsWrapper', ['$parse', '$compile', function( $parse,
                     }
                 }
                 if( !toggle_order ) {
-                    element.addClass( 'tablesort-asc' );
+                    element.addClass( 'tablesort-desc' );
                     $scope.sortExpression.push( expr );
                 }
 
