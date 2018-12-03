@@ -568,7 +568,7 @@ tableSortModule.filter( 'tablesortOrderBy', function() {
     return function(array, sortfun ) {
         if(!array) return;
         var arrayCopy = array.concat();
-        return arrayCopy.sort( sortfun );
+        return arrayCopy.sort( 'desc' );
     };
 } );
 
